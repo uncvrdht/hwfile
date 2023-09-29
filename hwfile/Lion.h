@@ -17,6 +17,7 @@ private:
 
 public:
     Lion();
+    Lion(const string& lionName, int lionAge, float lionWeight, int lionHunger, bool lionIsAlive, bool lionIsRoaring);
 
     void SetName(const string& lionName);
     string GetName() const;

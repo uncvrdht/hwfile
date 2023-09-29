@@ -1,123 +1,41 @@
-﻿#include "Dog.h"
-#include "Cat.h"
-#include "Parrot.h"
-#include "Lion.h"
+﻿#include "Cat.h"
+#include "Dog.h"
 #include "Fish.h"
-#include <windows.h> // Для Sleep
+#include "Lion.h"
+#include "Parrot.h"
 
 int main() {
     setlocale(LC_ALL, "ru");
-    Dog myDog;
-    myDog.SetName("Барон");
-    myDog.SetAge(3);
-    myDog.SetWeight(7.5);
 
-    Cat myCat;
-    myCat.SetName("Василиса");
-    myCat.SetAge(2);
-    myCat.SetWeight(4.0);
+    Dog dogWithoutParams; // Создание объекта собаки с конструктором без параметров
+    Dog dogWithParams("Барон", 3, 7.5, 50, true); // Создание объекта собаки с конструктором с параметрами
 
-    Parrot myParrot;
-    myParrot.SetName("Кеша");
-    myParrot.SetAge(5);
-    myParrot.SetWeight(0.3);
+    dogWithoutParams.About(); // Вывод информации о собаке без параметров
+    dogWithParams.About(); // Вывод информации о собаке с параметрами
 
-    Lion myLion;
-    myLion.SetName("Симба");
-    myLion.SetAge(4);
-    myLion.SetWeight(150.0);
+    Cat catWithoutParams; // Создание объекта кошки с конструктором без параметров
+    Cat catWithParams("Василиса", 2, 4.0, 40, true); // Создание объекта кошки с конструктором с параметрами
 
-    Fish myFish;
-    myFish.SetName("Немо");
-    myFish.SetAge(1);
-    myFish.SetWeight(0.05);
+    catWithoutParams.About(); // Вывод информации о кошке без параметров
+    catWithParams.About(); // Вывод информации о кошке с параметрами
 
-    myDog.About();
-    myCat.About();
-    myParrot.About();
-    myLion.About();
-    myFish.About();
+    Fish fishWithoutParams; // Создание объекта рыбы с конструктором без параметров
+    Fish fishWithParams("Немо", 1, 0.05, 30, true, true); // Создание объекта рыбы с конструктором с параметрами
 
-    while (myDog.IsAlive() && myCat.IsAlive() && myParrot.IsAlive() && myLion.IsAlive() && myFish.IsAlive() &&
-        myDog.GetSatiety() > 0 && myCat.GetHunger() < 100 && myParrot.GetHunger() < 100 && myLion.GetHunger() < 100 && myFish.GetHunger() < 100) {
-        myDog.SleepDog();
-        Sleep(2000); // Задержка 2 секунды
-        myDog.Walk();
-        Sleep(3000); // Задержка 3 секунды
-        myDog.Play();
-        Sleep(2000); // Задержка 2 секунды
-        myDog.Eat();
-        Sleep(1500); // Задержка 1.5 секунды
+    fishWithoutParams.About(); // Вывод информации о рыбе без параметров
+    fishWithParams.About(); // Вывод информации о рыбе с параметрами
 
-        myCat.SleepCat();
-        Sleep(2000); // Задержка 2 секунды
-        myCat.Hunt();
-        Sleep(3000); // Задержка 3 секунды
-        myCat.Eat();
-        Sleep(1500); // Задержка 1.5 секунды
+    Lion lionWithoutParams; // Создание объекта льва с конструктором без параметров
+    Lion lionWithParams("Симба", 6, 180.0, 70, true, true); // Создание объекта льва с конструктором с параметрами
 
-        myParrot.SleepParrot();
-        Sleep(2000); // Задержка 2 секунды
-        myParrot.Talk();
-        Sleep(3000); // Задержка 3 секунды
-        myParrot.Eat();
-        Sleep(1500); // Задержка 1.5 секунды
+    lionWithoutParams.About(); // Вывод информации о льве без параметров
+    lionWithParams.About(); // Вывод информации о льве с параметрами
 
-        myLion.SleepLion();
-        Sleep(2000); // Задержка 2 секунды
-        myLion.Roar();
-        Sleep(3000); // Задержка 3 секунды
-        myLion.Eat();
-        Sleep(1500); // Задержка 1.5 секунды
+    Parrot parrotWithoutParams; // Создание объекта попугая с конструктором без параметров
+    Parrot parrotWithParams("Кеша", 5, 0.3, 60, true, true); // Создание объекта попугая с конструктором с параметрами
 
-        myFish.SleepFish();
-        Sleep(2000); // Задержка 2 секунды
-        myFish.Swim();
-        Sleep(3000); // Задержка 3 секунды
-        myFish.Eat();
-        Sleep(1500); // Задержка 1.5 секунды
-
-        myDog.About();
-        myCat.About();
-        myParrot.About();
-        myLion.About();
-        myFish.About();
-    }
-
-    if (!myDog.IsAlive()) {
-        cout << myDog.GetName() << " умер от голода." << endl;
-    }
-    else {
-        cout << myDog.GetName() << " больше не хочет есть и ушел спать." << endl;
-    }
-
-    if (!myCat.IsAlive()) {
-        cout << myCat.GetName() << " умерла от голода." << endl;
-    }
-    else {
-        cout << myCat.GetName() << " больше не хочет есть и ушла спать." << endl;
-    }
-
-    if (!myParrot.IsAlive()) {
-        cout << myParrot.GetName() << " умер от голода." << endl;
-    }
-    else {
-        cout << myParrot.GetName() << " больше не хочет есть и ушел спать." << endl;
-    }
-
-    if (!myLion.IsAlive()) {
-        cout << myLion.GetName() << " умер от голода." << endl;
-    }
-    else {
-        cout << myLion.GetName() << " больше не хочет есть и ушел спать." << endl;
-    }
-
-    if (!myFish.IsAlive()) {
-        cout << myFish.GetName() << " умерла от голода." << endl;
-    }
-    else {
-        cout << myFish.GetName() << " больше не хочет есть и ушла спать." << endl;
-    }
+    parrotWithoutParams.About(); // Вывод информации о попугае без параметров
+    parrotWithParams.About(); // Вывод информации о попугае с параметрами
 
     return 0;
 }

@@ -8,103 +8,107 @@ Cat::Cat() {
     isAlive = true;
 }
 
+Cat::Cat(const string& catName, int catAge, float catWeight, int catHunger, bool catIsAlive) {
+    SetName(catName);
+    SetAge(catAge);
+    SetWeight(catWeight);
+    SetHunger(catHunger);
+    isAlive = catIsAlive;
+}
+
 void Cat::SetName(const string& catName) {
-    this->name = catName;
+    name = catName;
 }
 
 string Cat::GetName() const {
-    return this->name;
+    return name;
 }
 
 void Cat::SetAge(int catAge) {
-    this->age = catAge;
+    age = catAge;
 }
 
 int Cat::GetAge() const {
-    return this->age;
+    return age;
 }
 
 void Cat::SetWeight(float catWeight) {
-    this->weight = catWeight;
+    weight = catWeight;
 }
 
 float Cat::GetWeight() const {
-    return this->weight;
+    return weight;
 }
 
 void Cat::SetHunger(int catHunger) {
     if (catHunger < 0) {
-        this->hunger = 0;
-    }
-    else if (catHunger > 100) {
-        this->hunger = 100;
-    }
-    else {
-        this->hunger = catHunger;
+        hunger = 0;
+    } else if (catHunger > 100) {
+        hunger = 100;
+    } else {
+        hunger = catHunger;
     }
 }
 
 int Cat::GetHunger() const {
-    return this->hunger;
+    return hunger;
 }
 
 bool Cat::IsAlive() const {
-    return this->isAlive;
+    return isAlive;
 }
 
 void Cat::About() {
-    cout << "Имя: " << this->name << endl;
-    cout << "Возраст: " << this->age << " год(а)" << endl;
-    cout << "Вес: " << this->weight << " кг" << endl;
-    cout << "Уровень голода: " << this->hunger << "%" << endl;
-    cout << "Состояние: " << (this->isAlive ? "Жива" : "Мертва") << endl;
+    cout << "Имя: " << name << endl;
+    cout << "Возраст: " << age << " год(а)" << endl;
+    cout << "Вес: " << weight << " кг" << endl;
+    cout << "Уровень голода: " << hunger << "%" << endl;
+    cout << "Состояние: " << (isAlive ? "Жива" : "Мертва") << endl;
 }
 
 void Cat::SleepCat() {
-    if (!this->isAlive) {
-        cout << this->name << " мертва, нельзя спать." << endl;
+    if (!isAlive) {
+        cout << name << " мертва, нельзя спать." << endl;
         return;
     }
-    cout << this->name << " спит..." << endl;
-    this->hunger += 5;
-    if (this->hunger > 100) {
-        this->hunger = 100;
+    cout << name << " спит..." << endl;
+    hunger += 5;
+    if (hunger > 100) {
+        hunger = 100;
     }
     // Другие действия, связанные со сном
 }
 
 void Cat::Hunt() {
-    if (!this->isAlive) {
-        cout << this->name << " мертва, нельзя охотиться." << endl;
+    if (!isAlive) {
+        cout << name << " мертва, нельзя охотиться." << endl;
         return;
     }
-    if (this->hunger > 80) {
-        cout << this->name << " слишком сыта для охоты." << endl;
+    if (hunger > 80) {
+        cout << name << " слишком сыта для охоты." << endl;
         return;
     }
-    cout << this->name << " охотится на птицу..." << endl;
-    this->hunger += 20;
-    if (this->hunger > 100) {
-        this->hunger = 100;
+    cout << name << " охотится на птицу..." << endl;
+    hunger += 20;
+    if (hunger > 100) {
+        hunger = 100;
     }
-    this->weight -= 0.2; // Вес уменьшается во время охоты
     // Другие действия, связанные с охотой
 }
 
 void Cat::Eat() {
-    if (!this->isAlive) {
-        cout << this->name << " мертва, нельзя кормить." << endl;
+    if (!isAlive) {
+        cout << name << " мертва, нельзя кормить." << endl;
         return;
     }
-    if (this->hunger < 20) {
-        cout << this->name << " слишком сыта для еды." << endl;
+    if (hunger < 20) {
+        cout << name << " слишком сыта для еды." << endl;
         return;
     }
-    cout << this->name << " кушает рыбу..." << endl;
-    this->hunger -= 30;
-    if (this->hunger < 0) {
-        this->hunger = 0;
+    cout << name << " кушает рыбу..." << endl;
+    hunger -= 30;
+    if (hunger < 0) {
+        hunger = 0;
     }
-    this->weight += 0.1; // Вес увеличивается после еды
     // Другие действия, связанные с приемом пищи
 }

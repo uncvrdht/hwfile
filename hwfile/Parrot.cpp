@@ -9,6 +9,15 @@ Parrot::Parrot() {
     isTalking = false;
 }
 
+Parrot::Parrot(const string& parrotName, int parrotAge, float parrotWeight, int parrotHunger, bool parrotIsAlive, bool parrotIsTalking) {
+    SetName(parrotName);
+    SetAge(parrotAge);
+    SetWeight(parrotWeight);
+    SetHunger(parrotHunger);
+    isAlive = parrotIsAlive;
+    isTalking = parrotIsTalking;
+}
+
 void Parrot::SetName(const string& parrotName) {
     this->name = parrotName;
 }

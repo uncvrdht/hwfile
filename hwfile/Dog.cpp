@@ -8,6 +8,14 @@ Dog::Dog() {
     isAlive = true;
 }
 
+Dog::Dog(const string& dogName, int dogAge, float dogWeight, int dogSatiety, bool dogIsAlive) {
+    SetName(dogName);
+    SetAge(dogAge);
+    SetWeight(dogWeight);
+    SetSatiety(dogSatiety);
+    isAlive = dogIsAlive;
+}
+
 void Dog::SetName(const string& dogName) {
     name = dogName;
 }

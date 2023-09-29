@@ -16,6 +16,7 @@ private:
 
 public:
     Dog();
+    Dog(const string& dogName, int dogAge, float dogWeight, int dogSatiety, bool dogIsAlive);
 
     void SetName(const string& dogName);
     string GetName() const;

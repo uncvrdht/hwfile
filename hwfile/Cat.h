@@ -16,6 +16,7 @@ private:
 
 public:
     Cat();
+    Cat(const string& catName, int catAge, float catWeight, int catHunger, bool catIsAlive);
 
     void SetName(const string& catName);
     string GetName() const;

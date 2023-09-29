@@ -9,6 +9,15 @@ Lion::Lion() {
     isRoaring = false;
 }
 
+Lion::Lion(const string& lionName, int lionAge, float lionWeight, int lionHunger, bool lionIsAlive, bool lionIsRoaring) {
+    SetName(lionName);
+    SetAge(lionAge);
+    SetWeight(lionWeight);
+    SetHunger(lionHunger);
+    isAlive = lionIsAlive;
+    isRoaring = lionIsRoaring;
+}
+
 void Lion::SetName(const string& lionName) {
     this->name = lionName;
 }

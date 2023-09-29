@@ -17,6 +17,7 @@ private:
 
 public:
     Parrot();
+    Parrot(const string& parrotName, int parrotAge, float parrotWeight, int parrotHunger, bool parrotIsAlive, bool parrotIsTalking);
 
     void SetName(const string& parrotName);
     string GetName() const;

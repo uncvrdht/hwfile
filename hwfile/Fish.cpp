@@ -9,6 +9,15 @@ Fish::Fish() {
     isSwimming = false;
 }
 
+Fish::Fish(const string& fishName, int fishAge, float fishWeight, int fishHunger, bool fishIsAlive, bool fishIsSwimming) {
+    SetName(fishName);
+    SetAge(fishAge);
+    SetWeight(fishWeight);
+    SetHunger(fishHunger);
+    isAlive = fishIsAlive;
+    isSwimming = fishIsSwimming;
+}
+
 void Fish::SetName(const string& fishName) {
     this->name = fishName;
 }

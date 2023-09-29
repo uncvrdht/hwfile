@@ -17,6 +17,7 @@ private:
 
 public:
     Fish();
+    Fish(const string& fishName, int fishAge, float fishWeight, int fishHunger, bool fishIsAlive, bool fishIsSwimming);
 
     void SetName(const string& fishName);
     string GetName() const;
