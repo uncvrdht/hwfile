@@ -6,36 +6,70 @@
 
 int main() {
     setlocale(LC_ALL, "ru");
+    // Создание объектов кошек с разными конструкторами
+    Cat catWithoutParams; // Главный конструктор
+    Cat catWithName("Мурка"); // Конструктор для инициализации только именем
+    Cat catWithAge(3); // Конструктор для инициализации только возрастом
+    Cat catWithParams(true, "Василиса", 2, 4.0, 40); // Главный конструктор
 
-    Dog dogWithoutParams; // Создание объекта собаки с конструктором без параметров
-    Dog dogWithParams("Барон", 3, 7.5, 50, true); // Создание объекта собаки с конструктором с параметрами
+    // Вывод информации о кошках
+    catWithoutParams.About();
+    catWithName.About();
+    catWithAge.About();
+    catWithParams.About();
 
-    dogWithoutParams.About(); // Вывод информации о собаке без параметров
-    dogWithParams.About(); // Вывод информации о собаке с параметрами
 
-    Cat catWithoutParams; // Создание объекта кошки с конструктором без параметров
-    Cat catWithParams("Василиса", 2, 4.0, 40, true); // Создание объекта кошки с конструктором с параметрами
 
-    catWithoutParams.About(); // Вывод информации о кошке без параметров
-    catWithParams.About(); // Вывод информации о кошке с параметрами
+    // Создание объектов собак с разными конструкторами
+    Dog dogWithoutParams; // Главный конструктор
+    Dog dogWithName("Бобик"); // Конструктор для инициализации только именем
+    Dog dogWithAge(3); // Конструктор для инициализации только возрастом
+    Dog dogWithParams(true, "Шарик", 2, 25.50, 70); // Главный конструктор
 
-    Fish fishWithoutParams; // Создание объекта рыбы с конструктором без параметров
-    Fish fishWithParams("Немо", 1, 0.05, 30, true, true); // Создание объекта рыбы с конструктором с параметрами
+    // Вывод информации о собаках
+    dogWithoutParams.About();
+    dogWithName.About();
+    dogWithAge.About();
+    dogWithParams.About();
 
-    fishWithoutParams.About(); // Вывод информации о рыбе без параметров
-    fishWithParams.About(); // Вывод информации о рыбе с параметрами
 
-    Lion lionWithoutParams; // Создание объекта льва с конструктором без параметров
-    Lion lionWithParams("Симба", 6, 180.0, 70, true, true); // Создание объекта льва с конструктором с параметрами
+    // Создание объектов рыбки с разными конструкторами
+    Fish fishWithoutParams; // Главный конструктор
+    Fish fishWithName("Немо"); // Конструктор для инициализации только именем
+    Fish fishWithAge(1); // Конструктор для инициализации только возрастом
+    Fish fishWithParams(true, "Немо", 1, 0.50, 20); // Главный конструктор
 
-    lionWithoutParams.About(); // Вывод информации о льве без параметров
-    lionWithParams.About(); // Вывод информации о льве с параметрами
+    // Вывод информации о рыбках
+    fishWithoutParams.About();
+    fishWithName.About();
+    fishWithAge.About();
+    fishWithParams.About();
 
-    Parrot parrotWithoutParams; // Создание объекта попугая с конструктором без параметров
-    Parrot parrotWithParams("Кеша", 5, 0.3, 60, true, true); // Создание объекта попугая с конструктором с параметрами
 
-    parrotWithoutParams.About(); // Вывод информации о попугае без параметров
-    parrotWithParams.About(); // Вывод информации о попугае с параметрами
+    // Создание объектов левчики) с разными конструкторами
+    Lion lionWithoutParams; // Главный конструктор
+    Lion lionWithName("Симба"); // Конструктор для инициализации только именем
+    Lion lionWithAge(8); // Конструктор для инициализации только возрастом
+    Lion lionWithParams(true, "Симба", 8, 50, 90); // Главный конструктор
 
-    return 0;
+    // Вывод информации о львах
+    lionWithoutParams.About();
+    lionWithName.About();
+    lionWithAge.About();
+    lionWithParams.About();
+
+
+    // Создание объектов попуги с разными конструкторами
+    Parrot parrotWithoutParams; // Главный конструктор
+    Parrot parrotWithName("Кеша"); // Конструктор для инициализации только именем
+    Parrot parrotWithAge(8); // Конструктор для инициализации только возрастом
+    Parrot parrotWithParams(true, "Кеша", 2, 1.50, 5); // Главный конструктор
+
+    // Вывод информации о попугеях
+    parrotWithoutParams.About();
+    parrotWithName.About();
+    parrotWithAge.About();
+    parrotWithParams.About();
+
+
 }

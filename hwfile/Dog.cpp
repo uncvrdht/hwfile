@@ -1,19 +1,37 @@
 #include "Dog.h"
 
-Dog::Dog() {
-    name = "Unnamed";
-    age = 1;
-    weight = 5.0;
-    satiety = 80;
-    isAlive = true;
-}
-
-Dog::Dog(const string& dogName, int dogAge, float dogWeight, int dogSatiety, bool dogIsAlive) {
+// Главный конструктор
+Dog::Dog(bool dogIsAlive, const string& dogName, int dogAge, float dogWeight, int dogHunger) {
     SetName(dogName);
     SetAge(dogAge);
     SetWeight(dogWeight);
-    SetSatiety(dogSatiety);
+    SetSatiety(dogHunger);
     isAlive = dogIsAlive;
+}
+
+// Конструктор копирования
+Dog::Dog(const Dog& other) {
+    // Копируем значения полей из другого объекта
+    name = other.name;
+    age = other.age;
+    weight = other.weight;
+    satiety = other.satiety;
+    isAlive = other.isAlive;
+}
+
+// Конструктор для инициализации только именем
+Dog::Dog(const string& dogName) {
+    SetName(dogName);
+}
+
+// Конструктор для инициализации только возрастом
+Dog::Dog(int dogAge) {
+    SetAge(dogAge);
+}
+
+// Деструктор
+Dog::~Dog() {
+    // Дополнительные действия при удалении объекта, если необходимо
 }
 
 void Dog::SetName(const string& dogName) {

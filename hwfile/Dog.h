@@ -15,8 +15,20 @@ private:
     bool isAlive; // Жива ли собака
 
 public:
-    Dog();
-    Dog(const string& dogName, int dogAge, float dogWeight, int dogSatiety, bool dogIsAlive);
+    // Главный конструктор
+    Dog(bool dogIsAlive = true, const string& dogName = "Unnamed", int dogAge = 1, float dogWeight = 3.0, int dogHunger = 50);
+
+    // Конструктор копирования
+    Dog(const Dog& other);
+
+    // Конструктор для инициализации только именем
+    Dog(const string& dogName);
+
+    // Конструктор для инициализации только возрастом
+    Dog(int dogAge);
+
+    // Деструктор
+    ~Dog();
 
     void SetName(const string& dogName);
     string GetName() const;

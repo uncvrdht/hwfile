@@ -1,19 +1,36 @@
 #include "Cat.h"
-
-Cat::Cat() {
-    name = "Unnamed";
-    age = 1;
-    weight = 3.0;
-    hunger = 50;
-    isAlive = true;
-}
-
-Cat::Cat(const string& catName, int catAge, float catWeight, int catHunger, bool catIsAlive) {
+// Главный конструктор
+Cat::Cat(bool catIsAlive, const string& catName, int catAge, float catWeight, int catHunger) {
     SetName(catName);
     SetAge(catAge);
     SetWeight(catWeight);
     SetHunger(catHunger);
     isAlive = catIsAlive;
+}
+
+// Конструктор копирования
+Cat::Cat(const Cat& other) {
+    // Копируем значения полей из другого объекта
+    name = other.name;
+    age = other.age;
+    weight = other.weight;
+    hunger = other.hunger;
+    isAlive = other.isAlive;
+}
+
+// Конструктор для инициализации только именем
+Cat::Cat(const string& catName) {
+    SetName(catName);
+}
+
+// Конструктор для инициализации только возрастом
+Cat::Cat(int catAge) {
+    SetAge(catAge);
+}
+
+// Деструктор
+Cat::~Cat() {
+    // Дополнительные действия при удалении объекта, если необходимо
 }
 
 void Cat::SetName(const string& catName) {
@@ -43,9 +60,11 @@ float Cat::GetWeight() const {
 void Cat::SetHunger(int catHunger) {
     if (catHunger < 0) {
         hunger = 0;
-    } else if (catHunger > 100) {
+    }
+    else if (catHunger > 100) {
         hunger = 100;
-    } else {
+    }
+    else {
         hunger = catHunger;
     }
 }
@@ -64,6 +83,7 @@ void Cat::About() {
     cout << "Вес: " << weight << " кг" << endl;
     cout << "Уровень голода: " << hunger << "%" << endl;
     cout << "Состояние: " << (isAlive ? "Жива" : "Мертва") << endl;
+    cout << endl;
 }
 
 void Cat::SleepCat() {

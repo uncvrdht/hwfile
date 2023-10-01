@@ -16,8 +16,20 @@ private:
     bool isSwimming; // Плавает ли рыба
 
 public:
-    Fish();
-    Fish(const string& fishName, int fishAge, float fishWeight, int fishHunger, bool fishIsAlive, bool fishIsSwimming);
+    // Главный конструктор
+    Fish(bool fishIsAlive = true, const string& fishName = "Unnamed", int fishAge = 1, float fishWeight = 3.0, int fishHunger = 50);
+
+    // Конструктор копирования
+    Fish(const Fish& other);
+
+    // Конструктор для инициализации только именем
+    Fish(const string& fishName);
+
+    // Конструктор для инициализации только возрастом
+    Fish(int fishAge);
+
+    // Деструктор
+    ~Fish();
 
     void SetName(const string& fishName);
     string GetName() const;

@@ -1,21 +1,37 @@
 #include "Lion.h"
 
-Lion::Lion() {
-    name = "Unnamed";
-    age = 5;
-    weight = 200.0;
-    hunger = 80;
-    isAlive = true;
-    isRoaring = false;
-}
-
-Lion::Lion(const string& lionName, int lionAge, float lionWeight, int lionHunger, bool lionIsAlive, bool lionIsRoaring) {
+// Главный конструктор
+Lion::Lion(bool lionIsAlive, const string& lionName, int lionAge, float lionWeight, int lionHunger) {
     SetName(lionName);
     SetAge(lionAge);
     SetWeight(lionWeight);
     SetHunger(lionHunger);
     isAlive = lionIsAlive;
-    isRoaring = lionIsRoaring;
+}
+
+// Конструктор копирования
+Lion::Lion(const Lion& other) {
+    // Копируем значения полей из другого объекта
+    name = other.name;
+    age = other.age;
+    weight = other.weight;
+    hunger = other.hunger;
+    isAlive = other.isAlive;
+}
+
+// Конструктор для инициализации только именем
+Lion::Lion(const string& lionName) {
+    SetName(lionName);
+}
+
+// Конструктор для инициализации только возрастом
+Lion::Lion(int lionAge) {
+    SetAge(lionAge);
+}
+
+// Деструктор
+Lion::~Lion() {
+    // Дополнительные действия при удалении объекта, если необходимо
 }
 
 void Lion::SetName(const string& lionName) {

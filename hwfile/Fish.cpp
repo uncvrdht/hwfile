@@ -1,21 +1,37 @@
 #include "Fish.h"
 
-Fish::Fish() {
-    name = "Unnamed";
-    age = 1;
-    weight = 0.1;
-    hunger = 50;
-    isAlive = true;
-    isSwimming = false;
-}
-
-Fish::Fish(const string& fishName, int fishAge, float fishWeight, int fishHunger, bool fishIsAlive, bool fishIsSwimming) {
+// Главный конструктор
+Fish::Fish(bool fishIsAlive, const string& fishName, int fishAge, float fishWeight, int fishHunger) {
     SetName(fishName);
     SetAge(fishAge);
     SetWeight(fishWeight);
     SetHunger(fishHunger);
     isAlive = fishIsAlive;
-    isSwimming = fishIsSwimming;
+}
+
+// Конструктор копирования
+Fish::Fish(const Fish& other) {
+    // Копируем значения полей из другого объекта
+    name = other.name;
+    age = other.age;
+    weight = other.weight;
+    hunger = other.hunger;
+    isAlive = other.isAlive;
+}
+
+// Конструктор для инициализации только именем
+Fish::Fish(const string& fishName) {
+    SetName(fishName);
+}
+
+// Конструктор для инициализации только возрастом
+Fish::Fish(int fishAge) {
+    SetAge(fishAge);
+}
+
+// Деструктор
+Fish::~Fish() {
+    // Дополнительные действия при удалении объекта, если необходимо
 }
 
 void Fish::SetName(const string& fishName) {

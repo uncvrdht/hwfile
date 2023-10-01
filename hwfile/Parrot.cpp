@@ -1,21 +1,37 @@
 #include "Parrot.h"
 
-Parrot::Parrot() {
-    name = "Unnamed";
-    age = 1;
-    weight = 0.5;
-    hunger = 50;
-    isAlive = true;
-    isTalking = false;
-}
-
-Parrot::Parrot(const string& parrotName, int parrotAge, float parrotWeight, int parrotHunger, bool parrotIsAlive, bool parrotIsTalking) {
+// Главный конструктор
+Parrot::Parrot(bool parrotIsAlive, const string& parrotName, int parrotAge, float parrotWeight, int parrotHunger) {
     SetName(parrotName);
     SetAge(parrotAge);
     SetWeight(parrotWeight);
     SetHunger(parrotHunger);
     isAlive = parrotIsAlive;
-    isTalking = parrotIsTalking;
+}
+
+// Конструктор копирования
+Parrot::Parrot(const Parrot& other) {
+    // Копируем значения полей из другого объекта
+    name = other.name;
+    age = other.age;
+    weight = other.weight;
+    hunger = other.hunger;
+    isAlive = other.isAlive;
+}
+
+// Конструктор для инициализации только именем
+Parrot::Parrot(const string& parrotName) {
+    SetName(parrotName);
+}
+
+// Конструктор для инициализации только возрастом
+Parrot::Parrot(int parrotAge) {
+    SetAge(parrotAge);
+}
+
+// Деструктор
+Parrot::~Parrot() {
+    // Дополнительные действия при удалении объекта, если необходимо
 }
 
 void Parrot::SetName(const string& parrotName) {

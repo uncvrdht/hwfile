@@ -16,8 +16,20 @@ private:
     bool isRoaring; // Рычит ли лев
 
 public:
-    Lion();
-    Lion(const string& lionName, int lionAge, float lionWeight, int lionHunger, bool lionIsAlive, bool lionIsRoaring);
+    // Главный конструктор
+    Lion(bool lionIsAlive = true, const string& lionName = "Unnamed", int lionAge = 1, float lionWeight = 3.0, int lionHunger = 50);
+
+    // Конструктор копирования
+    Lion(const Lion& other);
+
+    // Конструктор для инициализации только именем
+    Lion(const string& lionName);
+
+    // Конструктор для инициализации только возрастом
+    Lion(int lionAge);
+
+    // Деструктор
+    ~Lion();
 
     void SetName(const string& lionName);
     string GetName() const;

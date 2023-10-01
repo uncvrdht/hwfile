@@ -15,8 +15,20 @@ private:
     bool isAlive; // Жива ли кошка
 
 public:
-    Cat();
-    Cat(const string& catName, int catAge, float catWeight, int catHunger, bool catIsAlive);
+    // Главный конструктор
+    Cat(bool catIsAlive = true, const string& catName = "Unnamed", int catAge = 1, float catWeight = 3.0, int catHunger = 50);
+
+    // Конструктор копирования
+    Cat(const Cat& other);
+
+    // Конструктор для инициализации только именем
+    Cat(const string& catName);
+
+    // Конструктор для инициализации только возрастом
+    Cat(int catAge);
+
+    // Деструктор
+    ~Cat();
 
     void SetName(const string& catName);
     string GetName() const;

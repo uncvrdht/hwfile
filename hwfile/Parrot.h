@@ -16,8 +16,20 @@ private:
     bool isTalking; // Говорит ли попугай
 
 public:
-    Parrot();
-    Parrot(const string& parrotName, int parrotAge, float parrotWeight, int parrotHunger, bool parrotIsAlive, bool parrotIsTalking);
+    // Главный конструктор
+    Parrot(bool parrotIsAlive = true, const string& parrotName = "Unnamed", int parrotAge = 1, float parrotWeight = 3.0, int parrotHunger = 50);
+
+    // Конструктор копирования
+    Parrot(const Parrot& other);
+
+    // Конструктор для инициализации только именем
+    Parrot(const string& parrotName);
+
+    // Конструктор для инициализации только возрастом
+    Parrot(int parrotAge);
+
+    // Деструктор
+    ~Parrot();
 
     void SetName(const string& parrotName);
     string GetName() const;
